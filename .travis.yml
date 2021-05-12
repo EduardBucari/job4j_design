@@ -20,3 +20,6 @@ notifications:
       -eduard.bucari@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+script:
+  - mvn test -B

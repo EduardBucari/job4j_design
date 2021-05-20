@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import static java.util.Objects.checkIndex;
 
 /**
- * Реализовать SimpleArray^T>
+ * Реализовать SimpleArray^T>:
  * В этом задании необходимо сделать универсальную обертку над массивом.
  * Добавить и реализовать 4 метода:
  * add(T model) - добавляет указанный элемент (model) в первую свободную ячейку;

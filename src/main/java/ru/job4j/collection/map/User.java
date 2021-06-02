@@ -3,10 +3,6 @@ package ru.job4j.collection.map;
 import java.util.Objects;
 import java.util.Calendar;
 
-import static java.util.Calendar.DAY_OF_MONTH;
-import static java.util.Calendar.MONTH;
-import static java.util.Calendar.YEAR;
-
 /**
  * Создать модель User.
  * User содержит три поля String name, int children, Calendar birthday.
@@ -43,5 +39,11 @@ public class User {
 
     public void setChildren(int children) {
         this.children = children;
+    }
+
+    // Переопределить в классе User метод hashCode(), метод equals() не переопределять.
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, birthday, children);
     }
 }

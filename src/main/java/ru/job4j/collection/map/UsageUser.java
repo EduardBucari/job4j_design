@@ -2,16 +2,16 @@ package ru.job4j.collection.map;
 
 import java.util.*;
 
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 /**
- * Без переопределения equals и hashCode.
+ * Переопределить только hashCode
  * Задание:
- * 1. В классе User не переопределять методы equals() и hashCode();
+ * 1. Переопределить в классе User метод hashCode(), метод equals() не переопределять.
  * 2. Создать два объекта User, которые имеют одинаковые поля.
+ *    Убедитесь что вы передаете одну и ту же дату рождения, вплоть до миллисекунд.
  * 3. Создать карту Map^User, Object>
  * 4. Добавить две пары. В качестве ключей использовать объекты User из пункта 2,
  *    а в качестве значения new Object().
@@ -20,16 +20,17 @@ import java.util.HashMap;
  */
 public class UsageUser {
     public static void main(String[] args) {
-        User user1 = new User("David",
-                new GregorianCalendar(1999, Calendar.SEPTEMBER, 19), 2);
+        User user1 = new User("Alex",
+                new GregorianCalendar(1999, Calendar.SEPTEMBER, 19), 1);
         User user2 = new User("Alex",
-                new GregorianCalendar(1997, Calendar.OCTOBER, 25), 1);
+                new GregorianCalendar(1999, Calendar.SEPTEMBER, 19), 1);
 
         Map<User, Object> map = new HashMap<>();
         map.put(user1, new Object());
         map.put(user2, new Object());
         System.out.println(map.get(user1));
         System.out.println(map.get(user2));
+        System.out.println(user1.hashCode());
+        System.out.println(user2.hashCode());
     }
-
 }

@@ -28,18 +28,9 @@ public class SimpleStack<T> {
      * @return - возвращаемое значение.
      */
      public T pop() {
-         return forwardLinked.deleteLast();
+         return forwardLinked.deleteFirst();
      }
 
-    /**
-     * Метод poll() удаляет нижний элемент из стека и возвращает его значение.
-     *
-     * @return возвращаемое значение.
-     */
-    public T poll() {
-        return forwardLinked.deleteFirst();
-
-    }
     /**
      * Метод push(T value) - помещает значение в коллекцию или в стек.
      * @param value - значение помещенное в стек.

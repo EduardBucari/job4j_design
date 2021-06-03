@@ -31,7 +31,7 @@ public class SimpleStackTest {
         stack.push(1);
         stack.push(2);
         stack.pop();
-        assertThat(stack.pop(), is(1));
+        assertThat(stack.pop(), is(2));
     }
 
     @Test(expected = NoSuchElementException.class)

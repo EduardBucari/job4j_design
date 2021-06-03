@@ -7,9 +7,9 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 /**
- * Переопределить только equals
+ * Переопределить и equals и hashCode
  * Задание:
- * 1. В классе User переопределить только метод equals(), метод hasCode() не переопределять.
+ * 1. В классе User переопределить equals() и hashCode().
  * 2. Создать два объекта User, которые имеют одинаковые поля.
  *    Убедитесь что вы передаете одну и ту же дату рождения, вплоть до миллисекунд.
  * 3. Создать карту Map^User, Object>
@@ -30,6 +30,16 @@ public class UsageUser {
         map.put(user2, new Object());
         System.out.println(map.get(user1));
         System.out.println(map.get(user2));
+        System.out.println(user1.hashCode());
+        System.out.println(user2.hashCode());
 
+        Set<User> set = new HashSet<>();
+        set.add(user1);
+        set.add(user2);
+        System.out.printf("Set size: %s elements \n", set.size());
+
+        if (user1.equals(user2)) {
+            System.out.println("OK: user1.equals(user2)");
+        }
     }
 }

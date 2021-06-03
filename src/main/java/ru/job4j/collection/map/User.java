@@ -41,9 +41,26 @@ public class User {
         this.children = children;
     }
 
-    // Переопределить в классе User метод hashCode(), метод equals() не переопределять.
+    // В классе User переопределить только метод equals(), метод hasCode() не переопределять.
+    // К сожалению check style не позволяет переопределение
+    // только equals поэтому закоментирую метод equals().
+
+   /*
     @Override
-    public int hashCode() {
-        return Objects.hash(name, birthday, children);
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return children == user.children
+                &&
+                Objects.equals(name, user.name)
+                &&
+                Objects.equals(birthday, user.birthday);
     }
+    */
+
 }

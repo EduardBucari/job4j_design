@@ -19,13 +19,15 @@ import java.util.HashMap;
  *    Описать полученный результат словами.
  */
 public class UsageUser {
+    /**
+
     public static void main(String[] args) {
         User user1 = new User("Alex",
                 new GregorianCalendar(1999, Calendar.SEPTEMBER, 19), 1);
         User user2 = new User("Alex",
                 new GregorianCalendar(1999, Calendar.SEPTEMBER, 19), 1);
 
-        Map<User, Object> map = new HashMap<>();
+        Map^User, Object> map = new HashMap<>();
         map.put(user1, new Object());
         map.put(user2, new Object());
         System.out.println(map.get(user1));
@@ -33,7 +35,7 @@ public class UsageUser {
         System.out.println(user1.hashCode());
         System.out.println(user2.hashCode());
 
-        Set<User> set = new HashSet<>();
+        Set^User> set = new HashSet<>();
         set.add(user1);
         set.add(user2);
         System.out.printf("Set size: %s elements \n", set.size());
@@ -42,4 +44,5 @@ public class UsageUser {
             System.out.println("OK: user1.equals(user2)");
         }
     }
+     */
 }

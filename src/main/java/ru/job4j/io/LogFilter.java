@@ -30,27 +30,32 @@ public class LogFilter {
         return result;
     }
 
-    public static void main(String[] args) {
-        List<String> log = filter("log.txt");
-        System.out.println(log);
+
+    /**
+     * BufferedOutputStream
+     * Задание 2.
+     * 1. Доработайте класс ru.job4j.io.LogFilter.
+     * 2. Нужно добавить метод save(String log). Метод должен записывать результат фильтрации в файл.
+     * т.е. Метод save получает данные лог файла на вход и записывает в файл.
+     * @param log - записываемые данные.
+     * @param file - имя файла.
+     */
+    public static void save(List<String> log, String file) {
+        try (PrintWriter out = new PrintWriter(
+                new BufferedOutputStream(
+                        new FileOutputStream(file)
+                )
+        )) {
+            for (String s : log) {
+                out.println(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public static void main(String[] args) {
+        List<String> log = filter("log.txt");
+        save(log, "404.txt");
+    }
 }

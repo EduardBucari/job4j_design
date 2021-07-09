@@ -59,9 +59,6 @@ public class Config {
      * @return Значение ключа.
      */
     public String value(String key) {
-        if (!values.containsKey(key)) {
-            throw new UnsupportedOperationException("Value is empty!");
-        }
         return values.get(key);
     }
 }

@@ -22,12 +22,12 @@ public class ConfigSecond {
                 if (buff != null && !buff.contains("#") && !buff.isEmpty()) {
                     String[] buffArr = buff.split("=");
                     if (buffArr.length < 2) {
-                        throw new Exception();
+                        throw new IllegalArgumentException();
                     }
                     values.put(buffArr[0], buffArr[1]);
                 }
             } while (nullCheck != null);
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw new IllegalArgumentException();
         }
     }

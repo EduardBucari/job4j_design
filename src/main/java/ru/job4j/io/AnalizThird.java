@@ -24,7 +24,7 @@ public class AnalizThird {
                     if ("".equals(checkBefore)) {
                         checkBefore = buffArr[0];
                     }
-                    if(("400".equals(checkBefore) || "500".equals(checkBefore))
+                    if (("400".equals(checkBefore) || "500".equals(checkBefore))
                             && ("200".equals(buffArr[0]) || "300".equals(buffArr[0]))) {
                         sb.append(";");
                         sb.append(buffArr[1]);

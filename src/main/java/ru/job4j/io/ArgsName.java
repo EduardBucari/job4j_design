@@ -2,6 +2,7 @@ package ru.job4j.io;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Именованные аргументы.
@@ -26,10 +27,11 @@ public class ArgsName {
      * @return Значение
      */
     public String get(String key) {
-        if (!values.containsKey(key)) {
-            throw new IllegalArgumentException("No such parameter exists");
-        }
         return values.get(key);
+    }
+
+    public Set<String> getKeys() {
+        return values.keySet();
     }
 
     /**

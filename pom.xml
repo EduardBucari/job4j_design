@@ -89,7 +89,7 @@
           <finalName>ZipUtility</finalName>
           <transformers>
             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>ru.job4j.io.Zip</mainClass>
+              <mainClass>ru.job4j.io.ZipSecond</mainClass>
             </transformer>
           </transformers>
         </configuration>

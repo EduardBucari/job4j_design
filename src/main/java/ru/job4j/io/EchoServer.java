@@ -2,7 +2,7 @@ package ru.job4j.io;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.job4j.io.log4j.UsageLog4j;
+import ru.job4j.io.UsageLog4j;
 
 import java.io.BufferedReader;
 import java.io.IOException;

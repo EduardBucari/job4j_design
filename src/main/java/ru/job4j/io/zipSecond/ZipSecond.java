@@ -46,7 +46,7 @@ public class ZipSecond {
             List<File> sources = sourcesPath.stream()
                     .map(Path::toFile)
                     .collect(Collectors.toList());
-            new Zip().packFiles(sources, new File(argZipSecond.output()));
+           // new Zip().packFiles(sources, new File(argZipSecond.output()));
         }
     }
 

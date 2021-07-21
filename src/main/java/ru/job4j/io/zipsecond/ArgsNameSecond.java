@@ -1,4 +1,4 @@
-package ru.job4j.io.zipSecond;
+package ru.job4j.io.zipsecond;
 
 import ru.job4j.io.ArgsName;
 

@@ -1,7 +1,6 @@
-package ru.job4j.io.zipSecond;
+package ru.job4j.io.zipsecond;
 
 import ru.job4j.io.SearchFiles;
-import ru.job4j.io.Zip;
 
 import java.io.*;
 import java.nio.file.Files;

@@ -1,6 +1,4 @@
-package ru.job4j.io.zipSecond;
-
-import ru.job4j.io.zipSecond.ArgsNameSecond;
+package ru.job4j.io.zipsecond;
 
 public class ArgZipSecond {
     private final ArgsNameSecond parser;

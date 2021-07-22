@@ -28,6 +28,11 @@ import java.net.Socket;
  * 2. Завершить работу сервера - (msg=Exit) (http://localhost:9000/?msg=Exit)
  * 3. Во всех остальных случаях отправлять текст запроса - (msg=Any)
  *    Запрос с параметром What, должен вернуть ответ типа What (http://localhost:9000/?msg=What)
+ *
+ * Slf4j - вывод exception.
+ * Задание 3.
+ * В задании Сокет/Бот уберите из сигнатуры метода main исключение.
+ * Обработайте его через catch c выводом в логгер.
  */
 
 public class EchoServer {

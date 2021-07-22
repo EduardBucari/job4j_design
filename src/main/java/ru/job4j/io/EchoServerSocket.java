@@ -17,7 +17,6 @@ public class EchoServerSocket {
                     String str;
                     while (!(str = in.readLine()).isEmpty()) {
                         if (str.contains("Bye")) {
-                            out.write("HTTP/1.1 200 OK\r\n".getBytes());
                             server.close();
                         }
                     }

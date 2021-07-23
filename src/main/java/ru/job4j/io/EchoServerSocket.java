@@ -15,11 +15,11 @@ public class EchoServerSocket {
                     out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
 
                     String str;
-                    while (!(str = in.readLine()).isEmpty()) {
-                        if (str.contains("Bye")) {
-                            server.close();
-                        }
-                    }
+                 //   while (!(str = in.readLine()).isEmpty()) {
+                 //       if (str.contains("Bye")) {
+                 //           server.close();
+                 //       }
+                 //   }
                 }
             }
         }

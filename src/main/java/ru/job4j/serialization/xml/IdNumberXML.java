@@ -1,7 +1,11 @@
 package ru.job4j.serialization.xml;
 
 public class IdNumberXML {
-    private final String idNumberXML;
+    private String idNumberXML;
+
+    public IdNumberXML() {
+
+    }
 
     public IdNumberXML(String idNumberXML) {
         this.idNumberXML = idNumberXML;

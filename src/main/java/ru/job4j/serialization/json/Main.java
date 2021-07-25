@@ -25,5 +25,11 @@ public class Main {
         jsonObject.put("monthOfPractice", itProgrammerXML.getMonthOfPractice());
         jsonObject.put("idNumber", jsonIdNumberXML);
         jsonObject.put("statuses", jsonStatuses);
+
+        /* Выведем результат в консоль */
+        System.out.println(jsonObject.toString());
+
+        /* Преобразуем объект person в json-строку */
+        System.out.println(new JSONObject(itProgrammerXML).toString());
     }
 }

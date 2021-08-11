@@ -132,10 +132,10 @@
         <version>3.2.4</version>
         <configuration>
           <!-- put your configurations here -->
-          <finalName>ZipUtility</finalName>
+          <finalName>FindFileUtility</finalName>
           <transformers>
             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>ru.job4j.io.zipsecond.ZipSecond</mainClass>
+              <mainClass>ru.job4j.io.search.Searching</mainClass>
             </transformer>
           </transformers>
         </configuration>

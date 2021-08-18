@@ -31,7 +31,7 @@ create table role_rules (
 create table users (
       id serial primary key,
       name varchar(100),
-      role_rules_id int references role_rules(id)
+      role_id int references role(id)
 );
 
 -- Категории заявки
@@ -50,14 +50,16 @@ create table state (
 create table commentary (
       id serial primary key,
       comment varchar(1500),
-      users_id int references users(id)
+      users_id int references users(id),
+      item_id int references item(id)
 );
 
 -- Приложенные Файлы.
 create table attachment (
       id serial primary key,
       name varchar(100),
-      users_id int references users(id)
+      users_id int references users(id),
+      item_id int references item(id)
 );
 
 -- Заявки.
@@ -66,7 +68,5 @@ ceate table item (
      name varchar(200),
      users_id int references users(id),           -- item - users = many-to-one
      category_id int references category(id),     -- item - category = many-to-one
-     state_id int references state(id),           -- item - state = many-to-one
-     commentary_id int references commentary(id), -- item - comments = one-to-many
-     attachment_id int references attachment(id)  -- item - attachment = one-to-many
+     state_id int references state(id)            -- item - state = many-to-one
 );

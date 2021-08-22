@@ -104,10 +104,9 @@ left join departments as d
 on department_id = d.id;
 
 select *
-from employees as e
-right join departments as d
-on department_id = d.id
-where e.name is not null;
+from departments as d
+right join employees as e
+on e.department_id = d.id
 
 -- 5. Создать таблицу teens с атрибутами name, gender и заполнить ее.
 --    Используя cross join составить все возможные разнополые пары.

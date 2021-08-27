@@ -125,7 +125,7 @@ public class TableEditor implements AutoCloseable {
     public static void main(String[] args) throws Exception {
         Properties properties = new Properties();
         TableEditor tableEditor = new TableEditor(properties);
-        tableEditor.dropTable("test_db_statement");
+       // tableEditor.dropTable("test_db_statement");
         tableEditor.createTable("test_db_statement");
         tableEditor.addColumn("test_db_statement", "name", "varchar(50)");
         tableEditor.addColumn("test_db_statement", "surname", "varchar(50)");

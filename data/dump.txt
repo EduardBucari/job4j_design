@@ -1,0 +1,5 @@
+Petr Petrov;petrov@yandex.ru;
+Ivan Ivanov;ivanov@gmail.com;
+Ramon Romanov;romanov@mail.ru;
+Mihail Ivanov;mihailov@gmail.com;
+Oleg Petrov;olegov@mail.ru;

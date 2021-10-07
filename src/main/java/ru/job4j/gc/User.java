@@ -1,5 +1,10 @@
 package ru.job4j.gc;
 
+/**
+ * @author Eduard Bucari
+ * @version 0.1
+ * @since 07/10/2021
+ */
 public class User {
     String firstName;
     String lastName;

@@ -5,6 +5,10 @@ package ru.job4j.gc;
  * Класс моделирующий срабатывание GC.
  * Создаем объект UserDemo и рассчитываем сколько он будет занимать памяти.
  * Рассчитать надо теоретически.
+ *
+ * @author Eduard Bucari
+ * @version 0.1
+ * @since 07/10/2021
  */
 public class UserDemo {
     private static final long KB = 1024;

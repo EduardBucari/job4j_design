@@ -11,7 +11,7 @@ public class GCTypeDemo2 {
         String stringWithPrefix = "stringWithPrefix";
 
         for (int i = 0; i < 3000000; i++) {
-            String newString = stringWithPrefix +i;
+            String newString = stringWithPrefix + i;
             sContainer.put(newString, newString);
         }
         System.out.println("Map size: " + sContainer.size());

@@ -37,11 +37,8 @@ public class GCDemo {
 
     public static void main(String[] args) {
         info();
-        // User user1 = new User("Evgeniy", 39);
-        // User user2 = new User("Evgeniy Alekseevich Petrov", 23);
         for (int i = 0; i < 100; i++) {
             new Person(i, "N" + i);
-            // new User("Evgeniy", 39);
         }
         System.gc();
         info();

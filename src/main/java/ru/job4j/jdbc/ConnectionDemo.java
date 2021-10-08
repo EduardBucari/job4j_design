@@ -21,7 +21,9 @@ import java.sql.SQLException;
 public class ConnectionDemo {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
-        // Регистрация драйвера в системе.
+        /*
+         * Регистрация драйвера в системе.
+         */
         Class.forName("org.postgresql.Driver");
         Config config = new Config("./data/app.properties");
         config.load();
@@ -29,7 +31,9 @@ public class ConnectionDemo {
         String login = config.value("hibernate.connection.username");
         String password = config.value("hibernate.connection.password");
 
-        // Подключение к postgres через jdbc
+        /*
+         * Подключение к postgres через jdbc
+         */
         try (Connection connection = DriverManager.getConnection(url, login, password)) {
 
             // Используем класс DatabaseMetaData для получинея имени пользователя и url

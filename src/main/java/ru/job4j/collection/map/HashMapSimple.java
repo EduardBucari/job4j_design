@@ -130,8 +130,6 @@ public class HashMapSimple<K, V> implements Iterable<HashMapSimple.Node<K, V>> {
         return h;
     }
 
-// Структура узла
-
     public static class Node<K, V> {
         private final K key;
         private V value;
@@ -168,8 +166,6 @@ public class HashMapSimple<K, V> implements Iterable<HashMapSimple.Node<K, V>> {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
     }
-
-// Итератор
 
     @Override
     public Iterator<Node<K, V>> iterator() {

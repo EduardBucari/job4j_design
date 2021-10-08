@@ -1,6 +1,5 @@
 package ru.job4j.io;
 
-//Для считывания файлов нужно использовать:
 import java.io.BufferedReader;
 import java.io.FileReader;
 

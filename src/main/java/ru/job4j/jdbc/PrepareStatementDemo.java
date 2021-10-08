@@ -137,7 +137,7 @@ public class PrepareStatementDemo {
         return cities;
     }
 
-    /**
+    /*
      * Получить id вставленного элемента.
      * 1.  На чистом SQL.
      * В SQL есть ключевое слово RETURNING(поля), которое мы можем использовать в запросе.
@@ -169,8 +169,8 @@ public class PrepareStatementDemo {
         }
         return city;
     }
-
      */
+
     /**
      * Реализация вышеперечисленных методов в main
      */

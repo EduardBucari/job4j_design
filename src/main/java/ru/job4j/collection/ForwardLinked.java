@@ -43,7 +43,7 @@ public class ForwardLinked<T> implements Iterable<T> {
      */
     public T deleteFirst() {
         if (isEmpty()) {
-            throw new NoSuchElementException(); // попытка удалить не сущствующий элемент.
+            throw new NoSuchElementException();
         }
         T result = head.value;
         head = head.next;
@@ -64,7 +64,7 @@ public class ForwardLinked<T> implements Iterable<T> {
      */
     public T deleteLast() {
         if (isEmpty()) {
-            throw new NoSuchElementException(); // Если список пустой
+            throw new NoSuchElementException();
         }
         Node<T> current = head;
         Node<T> previous = head;
@@ -74,9 +74,9 @@ public class ForwardLinked<T> implements Iterable<T> {
             current = current.next;
         }
         if (current == previous) {
-            head = null; // удаление последнего оставшегося элемента в списке.
+            head = null;
         }
-        previous.next = null; // обрыв связи предыдущего с последующим элементом.
+        previous.next = null;
         return current.value;
     }
 
@@ -135,7 +135,7 @@ public class ForwardLinked<T> implements Iterable<T> {
             @Override
             public T next() {
                 if (!hasNext()) {
-                    throw new NoSuchElementException(); // обращение к несуществующему элементу.
+                    throw new NoSuchElementException();
                 }
                 T value = node.value;
                 node = node.next;

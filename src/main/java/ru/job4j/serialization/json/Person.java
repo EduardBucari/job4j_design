@@ -54,13 +54,13 @@ public class Person {
         /* Модифицируем json-строку*/
         final String personJson =
                 "{"
-                        + "\"sex\":false," // "sex" : false, пара «ключ: значение» с логическим типом
-                        + "\"age\":35,"    // "age" : 30,    пара «ключ: значение» с числовым типом
-                        + "\"contact\":"   // "contact" : {  объект
+                        + "\"sex\":false," /* "sex" : false, пара «ключ: значение» с логическим типом */
+                        + "\"age\":35,"    /* "age" : 30,    пара «ключ: значение» с числовым типом */
+                        + "\"contact\":"   /* "contact" : {  объект */
                         + "{"
-                        + "\"phone\":\"+7 (111) 111-11-12\"" // "phone" : "11-12" пара «ключ: значение» со строкой
+                        + "\"phone\":\"+7 (111) 111-11-12\"" /* "phone" : "11-12" пара «ключ: значение» со строкой */
                         + "},"
-                        + "\"statuses\":" // "statuses":["IT Programmer","Married"] // массив строк
+                        + "\"statuses\":" /* "statuses":["IT Programmer","Married"] - массив строк */
                         + "[\"Student\",\"Free\"]"
                         + "}";
         final Person personMod = gson.fromJson(personJson, Person.class);

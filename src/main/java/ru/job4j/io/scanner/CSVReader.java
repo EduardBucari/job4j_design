@@ -28,11 +28,11 @@ import java.util.stream.IntStream;
  * 6. Добавить валидацию аргументов, как в классе Search.
  */
 public class CSVReader {
-    private final Path path; // путь к файлу с которого считываются данные.
-    private final String delimiter; // разделитель столбцов CSV.
-    private final String out; // тип вывода в консоль 'stdout' или в файл 'data.txt'
-    private final List<String> filter; // фильтр по столбцам.
-    private final  StringBuilder builder = new StringBuilder(); // класс для однопоточной работы со троками.
+    private final Path path;
+    private final String delimiter;
+    private final String out;
+    private final List<String> filter;
+    private final  StringBuilder builder = new StringBuilder();
 
 
     public CSVReader(Path path, String delimiter, String out, String[] filter) {
@@ -46,12 +46,12 @@ public class CSVReader {
         final Scanner scanFile = new Scanner(path)
                 .useDelimiter(System.lineSeparator());
 
-        // Считываем имена столбцов, для разделения и индексации:
+
         final String[] colNames = scanFile.next().split(delimiter);
         final int[] index = IntStream.range(0, colNames.length)
                 .filter(i -> filter.contains(colNames[i])).toArray();
 
-        // Считываем строки по фильтрам и записываем в буфер:
+
         while (scanFile.hasNextLine()) {
             final String[] columns = scanFile.next().split(delimiter);
             for (int i = 0; i < index.length; i++) {
@@ -78,7 +78,7 @@ public class CSVReader {
         final  ArgsName argsName = ArgsName.of(args);
         final Path path = Path.of(argsName.get("path"));
 
-        // Проверяем аргументы (5) и читаемость файла.
+
         if (args.length != 4 || !path.toFile().isFile()) {
             throw new IllegalArgumentException("Invalid path: " + path);
         }

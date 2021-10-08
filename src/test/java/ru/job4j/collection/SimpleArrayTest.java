@@ -55,7 +55,7 @@ public class SimpleArrayTest {
         it.next();
     }
 
-    // Дополнительные тесты, согласно заданию.
+    /* Дополнительные тесты, согласно заданию. */
 
     @Test(expected = ConcurrentModificationException.class)
     public void whenCorruptedAddByIndex() {

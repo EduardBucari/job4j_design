@@ -23,10 +23,10 @@ import java.util.NoSuchElementException;
  * @param <T> - обобщенный тип данных.
  */
 public class SimpleArray<T> implements Iterable<T> {
-    private Object[] container; // Создаем массив для внутреннего контейнера.
+    private Object[] container;
     private static final int DEFAULT_CAPACITY = 15;
     private int size;
-    private int modCount; // счетчик изменений.
+    private int modCount;
 
     /**
      * Данный конструктор создает объект SimpleArray заданной вместимости.
@@ -49,7 +49,6 @@ public class SimpleArray<T> implements Iterable<T> {
         this(DEFAULT_CAPACITY);
     }
 
-    // Приступаем к реализации основных методов SimpleArray:
     /**
      *  Метод add(T model) - добавляет элемент в конец массива SimpleArray;
      * @param model - Добавляемый элемент.
@@ -58,7 +57,7 @@ public class SimpleArray<T> implements Iterable<T> {
         resize();
         container[size] = model;
         size++;
-        modCount++; //реализация fail-fast поведения за счет изменений счетчика - modCount.
+        modCount++;
     }
 
     /**
@@ -69,11 +68,11 @@ public class SimpleArray<T> implements Iterable<T> {
      */
     public void add(int index, T model) {
         Objects.checkIndex(index, size + 1);
-        resize();  // Для проверки индекса используйте метод Objects.checkIndex()
+        resize();
         System.arraycopy(container, index, container, index + 1,
                 size - index);
         container[index] = model;
-        modCount++; //реализация fail-fast поведения за счет изменений счетчика - modCount.
+        modCount++;
         size++;
     }
 
@@ -89,11 +88,11 @@ public class SimpleArray<T> implements Iterable<T> {
         Objects.checkIndex(index, size);
         return (T) container[index];
     }
-     // Метод set(int index, T model) устанавливает элемент по заданному индексу.
+
     public void set(int index, T model) {
         Objects.checkIndex(index, size);
         container[index] = model;
-        modCount++; //реализация fail-fast поведения за счет изменений счетчика - modCount.
+        modCount++;
     }
 
     /**
@@ -174,7 +173,7 @@ public class SimpleArray<T> implements Iterable<T> {
         System.arraycopy(container, index + 1, container, index,
                 size - index - 1);
         size--;
-        modCount++; //реализация fail-fast поведения за счет изменений счетчика - modCount.
+        modCount++;
         return removedElement;
     }
 
@@ -198,7 +197,7 @@ public class SimpleArray<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new Iterator<>() {
             int iter;
-            final int expectedModCount = modCount; // fail-fast поведения
+            final int expectedModCount = modCount;
 
             @Override
             public boolean hasNext() {

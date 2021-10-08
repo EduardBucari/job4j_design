@@ -21,7 +21,7 @@ import java.util.ConcurrentModificationException;
  */
 public class SimpleMap<K, V> implements Iterable<V> {
     private int modCount;
-    private int capacity = 1 << 4; //16
+    private int capacity = 1 << 4;
     @SuppressWarnings("unchecked")
     private Node<K, V>[] table = new Node[capacity];
     private int size;

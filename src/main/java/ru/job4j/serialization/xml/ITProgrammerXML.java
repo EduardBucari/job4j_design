@@ -50,21 +50,21 @@ public class ITProgrammerXML {
         final ITProgrammerXML itProgrammerXML = new ITProgrammerXML(
                 false, 8, new IdNumberXML("123-45"), "java developer", "free");
 
-        // Получаем контекст для доступа к АПИ
+        /* Получаем контекст для доступа к АПИ */
         JAXBContext context = JAXBContext.newInstance(ITProgrammerXML.class);
-        // Создаем сериализатор
+        /* Создаем сериализатор */
         Marshaller marshaller = context.createMarshaller();
-        // Указываем, что нам нужно форматирование
+        /* Указываем, что нам нужно форматирование */
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
         try (StringWriter writer = new StringWriter()) {
-            // Сериализуем
+            /* Сериализуем */
             marshaller.marshal(itProgrammerXML, writer);
             String result = writer.getBuffer().toString();
             System.out.println(result);
         } catch (Exception e) {
 
-            /**
+            /*
              *   Для десериализации нам нужно создать десериализатор
              *         Unmarshaller unmarshaller = context.createUnmarshaller();
              *         try (StringReader reader = new StringReader(xml)) {

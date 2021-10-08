@@ -42,7 +42,7 @@ public class ForwardLinkedTest {
         assertThat(linked.deleteLast(), is(1));
     }
 
-    // Дополнительные тесты обращенного односвязного списка.
+    /* Дополнительные тесты обращенного односвязного списка. */
     @Test
     public void whenAddThenIterator() {
         ForwardLinked<Integer> linked = new ForwardLinked<>();

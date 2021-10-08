@@ -24,7 +24,9 @@ public class StatementDemo {
     }
     public static void main(String[] args) throws Exception {
 
-        // Создадим запрос на создание таблицы:
+        /*
+        Создадим запрос на создание таблицы:
+         */
         try (Connection connection = getConnection()) {
             try (Statement statement = connection.createStatement()) {
                 String sql = String.format(
@@ -33,15 +35,19 @@ public class StatementDemo {
                         "name varchar(255)"
                 );
 
-                // мы создали объект для запроса. Для его выполнения существует метод: execute(),
+                /*
+                 мы создали объект для запроса. Для его выполнения существует метод: execute(),
+                 */
                 statement.execute(sql);
                 System.out.println(getTableScheme(connection, "demo_table"));
             }
         }
     }
 
-    // Чтобы проверить, что таблица создалась давайте выведем ее схему, а именно ее столбцы и их типы.
-    // Для этого напишем отдельный метод:
+    /*
+     Чтобы проверить, что таблица создалась давайте выведем ее схему, а именно ее столбцы и их типы.
+     Для этого напишем отдельный метод:
+     */
     public static String getTableScheme(Connection connection, String tableName) throws Exception {
         StringBuilder sb = new StringBuilder();
         DatabaseMetaData metaData = connection.getMetaData();

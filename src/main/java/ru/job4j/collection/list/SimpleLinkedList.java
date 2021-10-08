@@ -29,9 +29,9 @@ import java.util.NoSuchElementException;
  * по индексу долгая операция для связных списков.
  */
 public class SimpleLinkedList<E> implements List<E> {
-    private Node<E> head; // Начало списка.
-    private Node<E> tail; // Конец списка.
-    private int modCount; // реализация fail-fast поведения за счет изменений счетчика - modCount.
+    private Node<E> head;
+    private Node<E> tail;
+    private int modCount;
     private int size;
 
     /**
@@ -76,8 +76,8 @@ public class SimpleLinkedList<E> implements List<E> {
     }
 
     private static class Node<E> {
-        E value; // Данные
-        Node<E> next; // следующий элемент в списке
+        E value;
+        Node<E> next;
 
         public Node(E value, Node<E> next) {
             this.value = value;
@@ -93,12 +93,12 @@ public class SimpleLinkedList<E> implements List<E> {
     public Iterator<E> iterator() {
         return new Iterator<>() {
             private final int expectedModCount = modCount;
-            private Node<E> pointer = head; // Указатель
+            private Node<E> pointer = head;
 
             @Override
             public boolean hasNext() {
                 if (modCount != expectedModCount) {
-                    throw new ConcurrentModificationException(); // Нарушение fail-fast поведения
+                    throw new ConcurrentModificationException();
                 }
                 return pointer != null;
             }
@@ -106,7 +106,7 @@ public class SimpleLinkedList<E> implements List<E> {
             @Override
             public E next() {
                 if (!hasNext()) {
-                    throw new NoSuchElementException(); // обращение у несуществующему элементу.
+                    throw new NoSuchElementException();
                 }
                 E value = pointer.value;
                 pointer = pointer.next;

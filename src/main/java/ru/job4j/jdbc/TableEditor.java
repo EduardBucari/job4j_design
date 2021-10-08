@@ -36,7 +36,7 @@ public class TableEditor implements AutoCloseable {
      * и берем оттуда логин, пароль, и путь к БД.
      */
     private void initConnection() throws Exception {
-        Class.forName("org.postgresql.Driver"); //Регистрация драйвера в системе.
+        Class.forName("org.postgresql.Driver"); /* Регистрация драйвера в системе. */
         Config config = new Config("./data/app.properties");
         config.load();
         String url = config.value("hibernate.connection.url");

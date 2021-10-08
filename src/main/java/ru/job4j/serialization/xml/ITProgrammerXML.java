@@ -68,7 +68,7 @@ public class ITProgrammerXML {
              *   Для десериализации нам нужно создать десериализатор
              *         Unmarshaller unmarshaller = context.createUnmarshaller();
              *         try (StringReader reader = new StringReader(xml)) {
-             *             // десериализуем
+             *              десериализуем
              *           ITProgrammerXML result = (ITProgrammerXML) unmarshaller.unmarshal(reader);
              *             System.out.println(result);
              */

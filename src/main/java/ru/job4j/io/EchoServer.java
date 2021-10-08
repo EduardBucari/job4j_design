@@ -60,7 +60,7 @@ public class EchoServer {
                                 out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
                                 out.write("Server stopped...".getBytes());
                                 server.close();
-                                break; //Сервер закрыт.
+                                break; /* Сервер закрыт. */
                             } else {
                                 answer = request;
                             }

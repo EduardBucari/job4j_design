@@ -12,7 +12,7 @@ import java.util.StringJoiner;
  */
 public class StatementDemo {
 
-    // Вынесем код создания подключения в отдельный метод:
+    /* Вынесем код создания подключения в отдельный метод: */
     private static Connection getConnection() throws Exception {
         Class.forName("org.postgresql.Driver");
         Config config = new Config("./data/app.properties");

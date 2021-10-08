@@ -59,7 +59,7 @@ public class SimpleMapTest {
     @Test
     public void whenExpandTable() {
         SimpleMap<Integer, Integer> input = new SimpleMap<>();
-        for (int i = 0; i < 13; i++) {   // capacity * 0.75
+        for (int i = 0; i < 13; i++) {   /* capacity * 0.75 */
             input.insert(i, i);
         }
         assertThat(input.size(), is(37));

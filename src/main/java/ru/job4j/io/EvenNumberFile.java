@@ -20,7 +20,7 @@ import java.io.FileInputStream;
  *
  * Четное число - число, которое делится на два без остатка.
  * int num = 10;
- * boolean rsl = num % 2 == 0; //истина, если четное.
+ * boolean rsl = num % 2 == 0; (истина, если четное).
  */
 public class EvenNumberFile {
     public static void main(String[] args) {

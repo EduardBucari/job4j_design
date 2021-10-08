@@ -6,7 +6,7 @@ public class HashMapSimple<K, V> implements Iterable<HashMapSimple.Node<K, V>> {
     /**
      * Начальный массив должен быть степенью двойки
      */
-    private Node<K, V>[] hashTable = new Node[16]; //структура Node ниже
+    private Node<K, V>[] hashTable = new Node[16]; /* структура Node ниже */
     /**
      * Коэффициент загрузки используется, когда ничего не указано в конструкторе.
      */

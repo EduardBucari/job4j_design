@@ -36,7 +36,7 @@ public class ConnectionDemo {
          */
         try (Connection connection = DriverManager.getConnection(url, login, password)) {
 
-            // Используем класс DatabaseMetaData для получинея имени пользователя и url
+            /* Используем класс DatabaseMetaData для получинея имени пользователя и url */
             DatabaseMetaData metaData = connection.getMetaData();
             System.out.println(metaData.getUserName());
             System.out.println(metaData.getURL());

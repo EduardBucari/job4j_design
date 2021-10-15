@@ -1,0 +1,5 @@
+#Файл для тестирования кэша.
+Address 1
+Address 2
+Address 3
+Address 4

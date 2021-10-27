@@ -1,24 +1,41 @@
 package ru.job4j.tdd;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * Заглушка-реализация интерфейса кинотеатра.
+ */
 public class Cinema3D implements Cinema {
 
+    /**
+     * Поиск сеанса.
+     * @param filter Предикат поиска.
+     * @return Список сеансов.
+     */
     @Override
     public List<Session> find(Predicate<Session> filter) {
-
-        return new ArrayList<Session>(Arrays.asList(new Session3D()));
+        return null;
     }
 
+    /**
+     * Покупка билета.
+     * @param account Аккаунт покупателя.
+     * @param row     Ряд места.
+     * @param column  Столбец расположения места.
+     * @param date    Дата сеанса.
+     * @return Билет.
+     */
     @Override
     public Ticket buy(Account account, int row, int column, Calendar date) {
-        return new Ticket3D();
+        return null;
     }
 
+    /**
+     * Добавить сеанс.
+     * @param session Добавляемый сеанс.
+     */
     @Override
     public void add(Session session) {
 

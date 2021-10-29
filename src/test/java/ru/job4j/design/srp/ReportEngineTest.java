@@ -7,6 +7,7 @@ import java.util.Calendar;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+
 public class ReportEngineTest {
 
     @Test
@@ -107,5 +108,18 @@ public class ReportEngineTest {
                         + "</body>"
                         + "</html>");
         assertThat(engine.generate(em -> true, store), is(expect.toString()));
+    }
+
+    /**
+     * Протестируем добавленную поддержку формата JSON и XML в генераторе отчетов.
+     */
+    @Test
+    public void whenJSONGenerated() {
+        MemStore store = new MemStore();
+        Employee worker = new Employee("Ivan", null, null, 100);
+        store.add(worker);
+        Report enigne = new ReportEngine(store, new ReportJSON());
+        String expect = "{\"name\":\"Ivan\",\"salary\":100.0}\r\n";
+        assertThat(enigne.generate(em -> true, store), is(expect));
     }
 }

@@ -17,21 +17,22 @@ public class ReportDeveloper implements Report {
     public String generate(Predicate<Employee> filter) {
         ReportEngine reportEngine = new ReportEngine(store);
         StringBuilder text = new StringBuilder();
-        text.append(
-                "<!DOCTYPE html>"
-               + "<html lang=\"ru\">"
-               + "<head>"
-               +   "<meta charset=\"UTF-8\">"
-               +   "<title>Document</title>"
-               +   "<meta name=\"descriptions\" content=\"HTML разметка\">"
-               +   "<meta name=\"keywords\" content=\"html, lesson\">"
-               + "</head>"
-               + "<body>"
-                );
+        text.append("""
+                <!DOCTYPE html>
+                <html lang="ru">
+                <head>
+                  <meta charset="UTF-8">
+                  <title>Document</title>
+                  <meta name="descriptions" content="HTML разметка">
+                  <meta name="keywords" content="html, lesson">
+                </head>
+                <body>
+                """);
         text.append(reportEngine.generate(filter));
-        text.append(
-                "</body>"
-               + "</html>");
+        text.append("""
+                </body>
+                </html>
+                """);
         return text.toString();
     }
 }

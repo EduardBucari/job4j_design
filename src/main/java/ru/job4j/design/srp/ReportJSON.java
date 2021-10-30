@@ -12,9 +12,14 @@ import java.util.function.Predicate;
  * Для сериализации использовать классы, описанные в разделе IO.
  */
 public class ReportJSON implements Report {
+    private Store store;
+
+    public ReportJSON(Store store) {
+        this.store = store;
+    }
 
     @Override
-    public String generate(Predicate<Employee> filter, Store store) {
+    public String generate(Predicate<Employee> filter) {
         StringBuilder text = new StringBuilder();
         Gson gson = new GsonBuilder().create();
         for (Employee e : store.findBy(filter)) {

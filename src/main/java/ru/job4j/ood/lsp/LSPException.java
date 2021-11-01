@@ -1,5 +1,9 @@
 package ru.job4j.ood.lsp;
 
+/**
+ * Принцип подстановки Лисков.
+ * Пример 2 (нарушение принципа LSP):
+ */
 public class LSPException {
 
 

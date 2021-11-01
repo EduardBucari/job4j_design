@@ -11,6 +11,7 @@ package ru.job4j.ood.lsp;
  * Задание:
  * Придумайте 3 примера, когда происходит нарушение принципа LSP.
  *
+ * Пример 1 (нарушение принципа LSP):
  */
 public class LSPExample {
     public int solution(int a, int b) {
@@ -20,20 +21,20 @@ public class LSPExample {
         return a + b;
     }
 }
-    /**
-     * Пример 1:
-     * Нарушение LSP - предусловие усиленно в подклассе.
-     */
-    class ChildLSPExample extends LSPExample {
+/**
+ * Пример 1:
+ * Нарушение LSP - предусловие усиленно в подклассе.
+ */
+class ChildLSPExample extends LSPExample {
 
-        @Override
-        public int solution(int a, int b) {
-            if (a < 10 || b < 10) {
-                throw new IllegalArgumentException();
-            }
-            return a + b;
+    @Override
+    public int solution(int a, int b) {
+        if (a < 10 || b < 10) {
+            throw new IllegalArgumentException();
         }
+        return a + b;
     }
+}
 
 
 

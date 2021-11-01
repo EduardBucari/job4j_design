@@ -1,5 +1,9 @@
 package ru.job4j.ood.lsp;
 
+/**
+ * Принцип подстановки Лисков.
+ * Пример 3 (нарушение принципа LSP):
+ */
 public class LSPRectangle {
     private int width;
     private int height;

@@ -1,6 +1,5 @@
 package ru.job4j.design.srp;
 
-import java.math.BigDecimal;
 import java.util.function.Predicate;
 
 /**
@@ -14,16 +13,22 @@ public class ReportBookkeeping implements Report {
         this.store = store;
     }
 
+    /**
+     * метод generate() описывает получение отчета для бухгалтерии
+     * @param filter на входе используется фильтр
+     * @return на выходе фильтрованный отчет
+     * Отдел бухгалтерии попросил изменить вид зарплаты (в долларах).
+     * .append(employee.getSalary() / 71).append(";") поменяли
+     */
     @Override
     public String generate(Predicate<Employee> filter) {
         StringBuilder text = new StringBuilder();
-        text.append("Name; Hired; Fired; Salary;");
-        text.append(System.lineSeparator());
+        text.append("Name; Hired; Fired; SalaryInDollar;");
         for (Employee employee : store.findBy(filter)) {
             text.append(employee.getName()).append(";")
                     .append(employee.getHired()).append(";")
                     .append(employee.getFired()).append(";")
-                    .append(BigDecimal.valueOf(employee.getSalary())).append(";")
+                    .append(employee.getSalary() / 71).append(";")
                     .append(System.lineSeparator());
         }
         return text.toString();

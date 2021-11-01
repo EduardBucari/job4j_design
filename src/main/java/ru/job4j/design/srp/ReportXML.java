@@ -3,6 +3,7 @@ package ru.job4j.design.srp;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.PropertyException;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import java.io.IOException;
@@ -23,39 +24,33 @@ public class ReportXML implements Report {
         this.store = store;
     }
 
+    /**
+     * генерируем отчет в формате хмл
+     *
+     * @param filter на входе нужный фильтр
+     * @return на выходе отХМЛенный отчет
+     * фильруем
+     * Получаем контекст для доступа к АПИ JAXBContext context = JAXBContext.newInstance(Employees.class);
+     * Создаем сериализатор Marshaller marshaller = context.createMarshaller();
+     * Указываем, что нам нужно форматирование marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+     * Сериализуем
+     */
     @Override
     public String generate(Predicate<Employee> filter) {
+        Employees employees = new Employees(store.findBy(filter));
         String xml = "";
-        try (StringWriter writer = new StringWriter()) {
-            JAXBContext context = JAXBContext.newInstance(Employee.class);
+        try {
+            JAXBContext context = JAXBContext.newInstance(Employees.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.marshal(new Employees(store.findBy(filter)), writer);
-            xml = writer.getBuffer().toString();
+
+            try (StringWriter writer = new StringWriter()) {
+                marshaller.marshal(employees, writer);
+                xml = writer.getBuffer().toString();
+            }
         } catch (IOException | JAXBException e) {
             e.printStackTrace();
         }
         return xml;
-    }
-
-    @XmlRootElement(name = "employees")
-    private static class Employees {
-
-        private List<Employee> employees;
-
-        public Employees() {
-        }
-
-        public Employees(List<Employee> employees) {
-            this.employees = employees;
-        }
-
-        public List<Employee> getEmployees() {
-            return employees;
-        }
-
-        public void setEmployees(List<Employee> employees) {
-            this.employees = employees;
-        }
     }
 }

@@ -1,8 +1,6 @@
 package ru.job4j.design.srp;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.util.function.Predicate;
 
 /**
@@ -12,7 +10,7 @@ import java.util.function.Predicate;
  * Для сериализации использовать классы, описанные в разделе IO.
  */
 public class ReportJSON implements Report {
-    private Store store;
+    private final Store store;
 
     public ReportJSON(Store store) {
         this.store = store;
@@ -20,12 +18,7 @@ public class ReportJSON implements Report {
 
     @Override
     public String generate(Predicate<Employee> filter) {
-        StringBuilder text = new StringBuilder();
-        Gson gson = new GsonBuilder().create();
-        for (Employee e : store.findBy(filter)) {
-            text.append(gson.toJson(e));
-            text.append(System.lineSeparator());
-        }
-        return text.toString();
+        var gson = new GsonBuilder().create();
+        return gson.toJson(store.findBy(filter));
     }
 }

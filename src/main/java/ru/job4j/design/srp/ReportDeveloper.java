@@ -15,24 +15,21 @@ public class ReportDeveloper implements Report {
 
     @Override
     public String generate(Predicate<Employee> filter) {
-        ReportEngine reportEngine = new ReportEngine(store);
         StringBuilder text = new StringBuilder();
-        text.append("""
-                <!DOCTYPE html>
-                <html lang="ru">
-                <head>
-                  <meta charset="UTF-8">
-                  <title>Document</title>
-                  <meta name="descriptions" content="HTML разметка">
-                  <meta name="keywords" content="html, lesson">
-                </head>
-                <body>
-                """);
-        text.append(reportEngine.generate(filter));
-        text.append("""
-                </body>
-                </html>
-                """);
+        text.append("<!DOCTYPE HTML>")
+                .append("<html><body><table>")
+                .append("<tr><td>Name</td>")
+                .append("<td>Hired</td>")
+                .append("<td>Fired</td>")
+                .append("<td>Salary</td></tr>");
+        for (Employee employee : store.findBy(filter)) {
+            text.append("<tr><td>").append(employee.getName()).append("</td>")
+                    .append("<td>").append(employee.getHired()).append("</td>")
+                    .append("<td>").append(employee.getFired()).append("</td>")
+                    .append("<td>").append(employee.getSalary()).append("</td></tr>")
+                    .append(System.lineSeparator());
+        }
+        text.append("</table></body></html>");
         return text.toString();
     }
 }

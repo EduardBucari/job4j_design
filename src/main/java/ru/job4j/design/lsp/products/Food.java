@@ -23,11 +23,11 @@ import java.util.Objects;
  * Нельзя использовать instanceOf или if ("Shop".equals(storage.getName())
  */
 public class Food {
-    private String name;
-    private LocalDate expiryDate;
-    private LocalDate createDate;
-    private double price;
-    private double discount;
+    protected String name;
+    protected LocalDate expiryDate;
+    protected LocalDate createDate;
+    protected double price;
+    protected double discount;
 
     public Food() {
     }

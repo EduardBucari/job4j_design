@@ -17,9 +17,10 @@ public class ControllQuality {
         this.storeList = storeList;
     }
 
-    public void distribution(Food food) {
+    public boolean distribution(Food food) {
         for (Store store : storeList) {
             store.save(food);
         }
+        return true;
     }
 }

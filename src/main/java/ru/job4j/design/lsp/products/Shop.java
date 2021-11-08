@@ -7,7 +7,7 @@ import java.util.List;
  * Класс Shop описывает добавление продуктов в магазин.
  */
 public class Shop implements Store {
-    List<Food> shopFoodList = new ArrayList<>();
+    private final List<Food> shopFoodList = new ArrayList<>();
     int discount = 50;
 
     @Override

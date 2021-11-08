@@ -8,7 +8,7 @@ import java.util.List;
  * Класс Trash описывает добавление продукта на мусорку.
  */
 public class Trash implements Store {
-    List<Food> trashFoodList = new ArrayList<>();
+    private final List<Food> trashFoodList = new ArrayList<>();
 
     /**
      * Условие:

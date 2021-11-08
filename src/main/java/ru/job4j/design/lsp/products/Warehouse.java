@@ -10,6 +10,7 @@ import java.util.List;
  * Класс Warehouse описывает добавление продукта в хранилище.
  */
 public class Warehouse implements Store {
+
     private final List<Food> warehouseFoodList = new ArrayList<>();
 
     /**

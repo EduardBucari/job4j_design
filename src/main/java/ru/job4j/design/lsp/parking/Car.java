@@ -26,8 +26,8 @@ import java.util.Objects;
  * class Car надо сделать абстрактным так как от него идет наследование.
  */
 public abstract class Car {
-    protected String name;
-    protected int size;
+    private String name;
+    private int size;
 
     public Car(String name, int size) {
         this.name = name;

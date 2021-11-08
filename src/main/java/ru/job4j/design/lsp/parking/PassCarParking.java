@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class PassCarParking implements Parking {
     private int passCarParkingSize;
-    List<Car> passCarParkingList = new ArrayList<>();
+    private final List<Car> passCarParkingList = new ArrayList<>();
 
     public PassCarParking(int passCarParkingSize) {
         this.passCarParkingSize = passCarParkingSize;
@@ -19,17 +19,11 @@ public class PassCarParking implements Parking {
     public boolean addCar(Car car) {
         boolean result = false;
         int size = car.getSize();
-        if (size == 1 && passCarParkingSize >= size) {
+        if (size >= 1 && passCarParkingSize >= size) {
             passCarParkingList.add(car);
             passCarParkingSize = passCarParkingSize - size;
             result = true;
         }
-        if (size > 1 && passCarParkingSize >= size) {
-            passCarParkingList.add(car);
-            passCarParkingSize = passCarParkingSize - size;
-            result = true;
-        }
-
         return result;
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class TruckParking implements Parking {
     private int truckParkingSize;
 
-    List<Car> truckParkingList = new ArrayList<>();
+    private final List<Car> truckParkingList = new ArrayList<>();
 
     public TruckParking(int truckParkingSize) {
         this.truckParkingSize = truckParkingSize;

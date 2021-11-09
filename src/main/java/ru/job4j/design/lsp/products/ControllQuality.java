@@ -11,7 +11,7 @@ import java.util.List;
  *       4. Если срок годности вышел. Отправить продукт в мусорку.
  */
 public class ControllQuality {
-    List<Store> storeList;
+    private final List<Store> storeList;
 
     public ControllQuality(List<Store> storeList) {
         this.storeList = storeList;

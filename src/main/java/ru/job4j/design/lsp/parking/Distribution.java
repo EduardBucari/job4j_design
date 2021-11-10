@@ -15,12 +15,12 @@ public class Distribution {
         this.parkingList = parkingList;
     }
 
-    public boolean distribution(List<Car> carList) {
+    public boolean distribute(List<Car> carList) {
         boolean result = true;
         for (Car car : carList) {
             int size = car.getSize();
             if (size > 1) {
-                if (truck.condition(car) >= 1) {
+                if (truck.getFreePlaces(car) >= 1) {
                     result = truck.addCar(car);
                 } else {
                     result = passenger.addCar(car);

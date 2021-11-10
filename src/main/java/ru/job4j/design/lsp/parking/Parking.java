@@ -9,5 +9,5 @@ import java.util.List;
 public interface Parking {
     boolean addCar(Car car);
     List<Car> getAll();
-    int condition(Car car);
+    int getFreePlaces(Car car);
 }

@@ -32,7 +32,7 @@ public class TruckParking implements Parking {
     }
 
     @Override
-    public int condition(Car car) {
+    public int getFreePlaces(Car car) {
         return truckParkingSize;
     }
 }

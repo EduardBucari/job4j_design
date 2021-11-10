@@ -33,7 +33,7 @@ public class PassCarParking implements Parking {
     }
 
     @Override
-    public int condition(Car car) {
+    public int getFreePlaces(Car car) {
         return passCarParkingSize;
     }
 }

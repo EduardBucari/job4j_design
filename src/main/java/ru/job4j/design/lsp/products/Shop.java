@@ -7,7 +7,9 @@ import java.util.List;
  * Класс Shop описывает добавление продуктов в магазин.
  */
 public class Shop implements Store {
+
     private final List<Food> shopFoodList = new ArrayList<>();
+
     int discount = 50;
 
     @Override
@@ -29,6 +31,7 @@ public class Shop implements Store {
      */
     @Override
     public boolean condition(Food food) {
+
         boolean result = false;
         if (Percent.percentation(food) >= 25 && Percent.percentation(food) <= 75) {
             System.out.println("Product go to Shop !!!");

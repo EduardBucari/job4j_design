@@ -6,13 +6,14 @@ public class Truck2 implements Machine2 {
 
     public Truck2(int size) {
         this.size = size;
+
+        if (size <= Car2.SIZE) {
+            throw new IllegalArgumentException(
+                    "Invalid truck size. Size must be more than 1");
+        }
     }
 
     public int getSize() {
-        if (size > 1) {
-            return size;
-        }
-        System.out.println("Размер грузовика указана не корректно");
-        return 0;
+        return size;
     }
 }

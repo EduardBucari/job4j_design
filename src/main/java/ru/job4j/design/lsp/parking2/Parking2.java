@@ -16,16 +16,16 @@ public class Parking2 implements ParkingMachine2 {
 
     @Override
     public boolean add(Machine2 machine2) {
-        if (machine2.getSize() == 1) {
+        if (machine2.getSize() == Car2.SIZE) {
             return parkingCar(machine2);
-        } else if (machine2.getSize() > 1) {
+        } else if (machine2.getSize() > Car2.SIZE) {
             return parkingTruck(machine2);
         }
         return false;
     }
 
     private boolean parkingTruck(Machine2 machine2) {
-        if (parkingSpaceTruck >= 1) {
+        if (parkingSpaceTruck >= Car2.SIZE) {
             parkingSpaceTruck--;
             return true;
         } else if (parkingSpaceCar >= machine2.getSize()) {

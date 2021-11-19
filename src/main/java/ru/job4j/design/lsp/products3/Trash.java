@@ -6,13 +6,19 @@ import java.util.List;
 import java.util.TimeZone;
 
 public class Trash implements Storage<Food> {
-    private List<Food> foods = new ArrayList<>();
+    private final List<Food> foods = new ArrayList<>();
 
     @Override
-    public void save(Food food) {
+    public boolean save(Food food) {
         if (quality(food)) {
             foods.add(food);
         }
+
+        if (!save(food)) {
+            return false;
+        }
+        foods.add(food);
+        return true;
     }
 
     @Override

@@ -2,6 +2,9 @@ package ru.job4j.design.lsp.products4.food;
 
 import java.time.LocalDateTime;
 
+/**
+ * Хранилище продуктов и Динамическое перераспределение продуктов
+ */
 public class Food {
     private String name;
     private LocalDateTime expiredDate;

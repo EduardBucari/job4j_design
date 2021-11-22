@@ -6,6 +6,9 @@ import ru.job4j.design.lsp.products4.store.Store;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Хранилище продуктов и Динамическое перераспределение продуктов
+ */
 public class ControlQuality {
 
     private List<Store> stores;

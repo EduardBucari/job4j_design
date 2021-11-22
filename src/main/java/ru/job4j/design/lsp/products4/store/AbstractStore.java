@@ -4,6 +4,9 @@ import ru.job4j.design.lsp.products4.food.Food;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Хранилище продуктов и Динамическое перераспределение продуктов
+ */
 public abstract class AbstractStore implements Store {
     private final List<Food> foods = new LinkedList<>();
 

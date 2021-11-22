@@ -13,6 +13,9 @@ import ru.job4j.design.lsp.products4.store.Warehouse;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Хранилище продуктов и Динамическое перераспределение продуктов
+ */
 public class ControlQualityTest {
 
     @Test
